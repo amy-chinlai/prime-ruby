@@ -1,10 +1,11 @@
 # Add  code here!
+require 'pry'
+
 def prime?(integer)
-    (2..(integer - 1)).each do |num|
-        if integer % num == 0
-             false
-        else
-             true
-        end
+    if integer <= 1 
+        return false
+    end
+        (2..(integer.abs - 1)).to_a.all? do |num|
+        integer.abs % num != 0
     end
 end
